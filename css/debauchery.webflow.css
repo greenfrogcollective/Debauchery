@@ -6,6 +6,113 @@
   --bitcoin: #f7931a;
 }
 
+
+/* Modal is hidden by default and centered */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(50, 50, 50, 0.9); /* Dark gray with slight transparency */
+  color: var(--color);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* When modal is active (visible) */
+.modal.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Modal content area (optional inner box styling) */
+.modal-content {
+  background-color: transparent; /* Make sure the content box is also transparent */
+  padding: 0;
+  border-radius: 15px;
+}
+
+/* Close button inside the modal */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Darken background when modal is active */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.modal-backdrop.active {
+  display: block;
+}
+
+.wallet-checker {
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.9); 
+    font-size: 36px;
+}
+.search-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+
+.search-input {
+  padding: 10px;
+  border: 2px solid #fff;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  outline: none;
+  width: 250px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #339933;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4px;
+}
+
+.search-button:hover {
+  background-color: #44cc44;
+}
+
 .w-layout-hflex {
   flex-direction: row;
   align-items: flex-start;
@@ -2583,6 +2690,10 @@ figcaption {
     margin-top: 20px;
     display: flex;
   }
+
+
+
+
 }
 
 #w-node-_6ffc677b-f891-aac1-e570-241972e0b153-9712e5d3 {
