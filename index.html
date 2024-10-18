@@ -39,7 +39,8 @@
       <div class="navbar-holder">
         <div class="navbar-container">
           <div class="search-container">
-            <button id="search-btn" class="search-button">WALLET CHECKER</button>
+            <button id="explore-btn" class="search-button1">EXPLORE COLLECTION</button>
+            <button id="search-btn" class="search-button2">WALLET CHECKER</button>
           </div>
           <a href="template/style-guide.html" class="brand w-nav-brand"><img src="images/debauchery-logomark.svg" loading="lazy" alt="" class="nav-logo"></a>
         </div>
@@ -330,6 +331,7 @@
     document.body.appendChild(backdrop);
 
     const searchBtn = document.getElementById('search-btn'); // Button that opens the modal
+    const exploreBtn = document.getElementById('explore-btn'); // Button that opens search page
     const closeModal = document.getElementById('close-modal'); // Close button inside modal
     const modalSearchBtn = document.getElementById('modal-search-btn'); // "Check" button inside modal
     const walletInput = document.getElementById('wallet-input'); // Input field inside modal
@@ -373,7 +375,12 @@
     } else {
       console.error("Close button not found."); // Debugging Line
     }
-
+    if (exploreBtn) {
+      exploreBtn.addEventListener('click', () => {
+        const url = 'https://btc.frl/browse_insurrection'; // Replace with the external URL you want to open
+        window.open(url, '_blank'); // Opens the URL in a new window or tab
+      });
+    }
     // Validate address format (Bitcoin address length + alphanumeric check)
     const validateBitcoinAddress = (address) => {
       const btcAddressRegex = /^[a-zA-Z0-9]+$/; // Allowed characters a-z, A-Z, 0-9
