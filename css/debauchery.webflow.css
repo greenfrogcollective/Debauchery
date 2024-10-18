@@ -116,7 +116,7 @@
 .search-button1 {
   padding: 10px 20px;
   margin-left: 10px;
-  background-color: #778833;
+  background-color: #F2A900;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -125,7 +125,7 @@
 }
 
 .search-button1:hover {
-  background-color: #aabb44;
+  background-color: #ffcc44;
 }
 
 .search-button2 {
