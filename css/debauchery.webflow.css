@@ -71,7 +71,7 @@
 
 .wallet-checker {
   font-family: 'Montserrat', sans-serif;
-  color: rgba(255, 255, 255, 0.9); 
+  color: rgba(255, 255, 255, 0.9);
     font-size: 36px;
 }
 .search-container {
@@ -111,6 +111,36 @@
 
 .search-button:hover {
   background-color: #44cc44;
+}
+
+.search-button1 {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #778833;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4px;
+}
+
+.search-button1:hover {
+  background-color: #aabb44;
+}
+
+.search-button2 {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #449933;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 4px;
+}
+
+.search-button2:hover {
+  background-color: #55cc44;
 }
 
 .w-layout-hflex {
