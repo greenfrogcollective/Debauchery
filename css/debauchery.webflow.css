@@ -6,6 +6,25 @@
   --bitcoin: #f7931a;
 }
 
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 0.5s forwards;
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOutAnimation 0.5s forwards;
+}
+
+@keyframes fadeInAnimation {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOutAnimation {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
 
 /* Modal is hidden by default and centered */
 .modal {
@@ -662,6 +681,12 @@ figcaption {
   font-family: Montserrat, sans-serif;
   font-weight: 800;
   line-height: 1.1;
+  text-shadow:
+  -1px 0px 0 #333,
+  1px 0px 0 #333,
+  0px 1px 0 #333,
+  0px -1px 0 #333,
+  4px 4px 0 #333;
 }
 
 .black-text {
@@ -1338,6 +1363,13 @@ figcaption {
   font-family: Montserrat, sans-serif;
   font-size: 18px;
   line-height: 1.5;
+  text-shadow:
+  -1px 0px 0 #222,
+  1px 0px 0 #222,
+  0px 1px 0 #222,
+  0px -1px 0 #222,
+  2px 2px 0 #222;
+
 }
 
 .about-the-game {
@@ -1978,6 +2010,12 @@ figcaption {
 .heading.subhead {
   color: var(--color);
   font-size: 24px;
+  text-shadow:
+  -1px 0px 0 #222,
+  1px 0px 0 #222,
+  0px 1px 0 #222,
+  0px -1px 0 #222,
+  3px 3px 0 #222;
 }
 
 .maps-grid-holder-copy {
@@ -2018,6 +2056,12 @@ figcaption {
 
 .heading-2 {
   color: var(--color);
+  text-shadow:
+  -1px 0px 0 #222,
+  1px 0px 0 #222,
+  0px 1px 0 #222,
+  0px -1px 0 #222,
+  3px 3px 0 #222;
 }
 
 .text-block-2 {
