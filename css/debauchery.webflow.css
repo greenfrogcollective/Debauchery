@@ -2,7 +2,7 @@
   --ktm-color: rgba(60, 60, 60, 0.7);
   --bg-color: black;
   --light-grey: darkgrey;
-  --color: white;
+  --color: #eee;
   --bitcoin: #f7931a;
 }
 
@@ -65,7 +65,7 @@
   top: 15px;
   right: 15px;
   background-color: #ff0000;
-  color: white;
+  color: #eee;
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
@@ -104,9 +104,9 @@
 
 .search-input {
   padding: 10px;
-  border: 2px solid #fff;
+  border: 2px solid #eee;
   background-color: #000;
-  color: #fff;
+  color: #eee;
   border-radius: 4px;
   outline: none;
   width: 250px;
@@ -121,7 +121,7 @@
   padding: 10px 20px;
   margin-left: 10px;
   background-color: #339933;
-  color: #fff;
+  color: #eee;
   border: none;
   cursor: pointer;
   font-family: 'Montserrat', sans-serif;
@@ -256,7 +256,7 @@
 
 body {
   color: #000;
-  background-color: #fff;
+  background-color: #eee;
   font-family: Archivo Variable, sans-serif;
   font-size: 14px;
   line-height: 1.2;
@@ -374,7 +374,7 @@ figcaption {
 }
 
 .white-colors-show-case {
-  background-color: #fff;
+  background-color: #eee;
   border-radius: 300px;
   width: 54px;
   height: 54px;
@@ -494,12 +494,12 @@ figcaption {
 }
 
 .button:hover {
-  color: #fff;
+  color: #eee;
   background-color: #222;
 }
 
 .button.transparent {
-  color: #fff;
+  color: #eee;
   background-color: #fff0;
   transition-property: color, background-color;
 }
@@ -510,7 +510,7 @@ figcaption {
 
 .button.white-button {
   color: #000;
-  background-color: #fff;
+  background-color: #eee;
 }
 
 .button.white-button:hover {
@@ -779,7 +779,7 @@ figcaption {
 }
 
 .error-message {
-  color: #fff;
+  color: #eee;
   text-align: center;
   background-color: #333;
   border: 1px solid #aa5252;
@@ -830,7 +830,7 @@ figcaption {
 }
 
 .help-back-link-holder:hover {
-  color: #fff;
+  color: #eee;
 }
 
 .help-icon-holder {
@@ -888,7 +888,7 @@ figcaption {
 .figma-file-container {
   grid-column-gap: 32px;
   opacity: 1;
-  background-color: #fff;
+  background-color: #eee;
   border: 1px solid #c7c7c7;
   border-radius: 8px;
   align-items: flex-start;
@@ -982,7 +982,7 @@ figcaption {
 }
 
 .utility-page-form {
-  color: #fff;
+  color: #eee;
   flex-direction: column;
   align-items: stretch;
   display: flex;
@@ -991,7 +991,7 @@ figcaption {
 ._404 {
   grid-column-gap: 30px;
   grid-row-gap: 15px;
-  color: #fff;
+  color: #eee;
   flex-direction: column;
   align-items: center;
   display: flex;
@@ -1161,7 +1161,7 @@ figcaption {
 }
 
 .footer-links {
-  color: #fff;
+  color: #eee;
   font-size: 25px;
   font-weight: 300;
   transition: color .3s;
@@ -1198,7 +1198,7 @@ figcaption {
 }
 
 .footer-copy-right-links.white {
-  color: #fff;
+  color: #eee;
 }
 
 .links-holder {
@@ -1282,7 +1282,7 @@ figcaption {
 }
 
 .game-name {
-  color: #fff;
+  color: #eee;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
@@ -1353,7 +1353,7 @@ figcaption {
 }
 
 .main-text {
-  color: #fff;
+  color: #eee;
   font-size: 38px;
 }
 
@@ -1430,7 +1430,7 @@ figcaption {
 }
 
 .cutout {
-  background-color: #fff;
+  background-color: #eee;
   width: 24px;
   height: 12px;
   position: absolute;
@@ -1485,7 +1485,7 @@ figcaption {
 }
 
 .white-text {
-  color: #fff;
+  color: #eee;
 }
 
 .hero-paragraph {
@@ -1723,9 +1723,9 @@ figcaption {
 }
 
 .text-field {
-  color: #fff;
+  color: #eee;
   background-color: #fff0;
-  border: 1px solid #fff;
+  border: 1px solid #eee;
   height: 73px;
   margin-bottom: 0;
   padding-left: 30px;
@@ -1787,7 +1787,7 @@ figcaption {
   z-index: 1;
   grid-row-gap: 24px;
   border-top: 8px solid var(--ktm-color);
-  background-color: #fff;
+  background-color: #eee;
   flex-direction: column;
   height: 100%;
   display: flex;
@@ -1859,7 +1859,7 @@ figcaption {
 }
 
 .white-cover-image {
-  background-color: #fff;
+  background-color: #eee;
   width: 101%;
   height: 0%;
   position: absolute;
@@ -1951,7 +1951,7 @@ figcaption {
 .buy-template-holder {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  background-color: #fff;
+  background-color: #eee;
   border: 1px solid #d8d8d854;
   border-radius: 4px;
   padding: 8px 12px 11px;
@@ -2106,7 +2106,7 @@ figcaption {
 }
 
 .subheader-main {
-  color: #fff;
+  color: #eee;
   text-transform: uppercase;
   font-family: Montserrat, sans-serif;
   font-size: 26px;
@@ -2123,7 +2123,7 @@ figcaption {
   }
 
   .title {
-    color: #fff;
+    color: #eee;
   }
 
   .featured-logo-wrapper {
@@ -2300,7 +2300,7 @@ figcaption {
   }
 
   .nav-link {
-    color: #fff;
+    color: #eee;
   }
 
   .featured-logo-wrapper {
