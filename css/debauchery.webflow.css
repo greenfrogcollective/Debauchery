@@ -1,5 +1,5 @@
 :root {
-  --ktm-color: #434343;
+  --ktm-color: rgba(60, 60, 60, 0.7);
   --bg-color: black;
   --light-grey: darkgrey;
   --color: white;
@@ -113,34 +113,111 @@
   background-color: #44cc44;
 }
 
+.search-button-common {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 500;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
 .search-button1 {
-  padding: 10px 20px;
+  background: rgba(135, 135, 135, 0.15);
+  border: 1px solid #555;
+  color: #ddd;
   margin-left: 10px;
-  background-color: #F2A900;
-  color: #fff;
-  border: none;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 4px;
+  transition: background 0.3s, border-color 0.3s;
+  text-shadow:
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  0px -1px 0 #000,
+  0px 1px 0 #000,
+  2px 2px 0 #000;
 }
 
 .search-button1:hover {
-  background-color: #ffcc44;
+  background: rgba(135, 135, 135, 0.75);
+  border-color: #888;
 }
 
 .search-button2 {
-  padding: 10px 20px;
+  background: rgba(165, 165, 165, 0.15);
+  border: 1px solid #555;
+  color: #ddd;
   margin-left: 10px;
-  background-color: #449933;
-  color: #fff;
-  border: none;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
-  border-radius: 4px;
+  transition: background 0.3s, border-color 0.3s;
+  text-shadow:
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  0px -1px 0 #000,
+  0px 1px 0 #000,
+  2px 2px 0 #000;
 }
 
 .search-button2:hover {
-  background-color: #55cc44;
+  background: rgba(165, 165, 165, 0.75);
+  border-color: #888;
+}
+
+.search-button3 {
+  background: rgba(195, 195, 195, 0.15);
+  border: 1px solid #555;
+  color: #ddd;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  text-shadow:
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  0px -1px 0 #000,
+  0px 1px 0 #000,
+  2px 2px 0 #000;
+}
+
+.search-button3:hover {
+  background: rgba(195, 195, 195, 0.75);
+  border-color: #888;
+}
+
+.search-button4 {
+  background: rgba(225, 225, 225, 0.15);
+  border: 1px solid #555;
+  color: #ddd;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  text-shadow:
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  0px -1px 0 #000,
+  0px 1px 0 #000,
+  2px 2px 0 #000;
+}
+
+.search-button4:hover {
+  background: rgba(225, 225, 225, 0.75);
+  border-color: #888;
+}
+
+.search-button5 {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid #555;
+  color: #ddd;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  text-shadow:
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  0px -1px 0 #000,
+  0px 1px 0 #000,
+  2px 2px 0 #000;
+}
+
+.search-button5:hover {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: #888;
 }
 
 .w-layout-hflex {
@@ -376,16 +453,25 @@ figcaption {
   display: flex;
 }
 
+
 .button {
-  background-color: var(--ktm-color);
-  color: #000;
-  text-transform: uppercase;
-  border-radius: 0;
-  padding: 24px 42px;
-  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
   font-weight: 500;
+  background-color: var(--ktm-color);
+  border: 1px solid #555;
+  color: #eee;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 24px 42px;
   transition: background-position .25s, background-color .45s;
   display: flex;
+  text-shadow:
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  0px 1px 0 #000,
+  0px -1px 0 #000,
+  3px 3px 0 #000;
 }
 
 .button:hover {
@@ -1279,20 +1365,36 @@ figcaption {
 }
 
 .button-cutout {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  color: #eee;
   background-color: var(--ktm-color);
+  border: 1px solid #555;
   text-transform: uppercase;
   margin-top: 32px;
   margin-right: 20px;
   padding: 16px;
-  font-size: 17px;
   font-weight: 500;
   transition: color .3s, background-color .35s;
   position: relative;
+  border-radius: 5px;
+  text-shadow:
+  -1px 0px 0 #000,
+  1px 0px 0 #000,
+  0px 1px 0 #000,
+  0px -1px 0 #000,
+  3px 3px 0 #000;
 }
 
 .button-cutout:hover {
-  color: var(--bg-color);
+  color: #333;
   background-color: #cfcfcf;
+  text-shadow:
+  -1px 0px 0 #888,
+  1px 0px 0 #888,
+  0px 1px 0 #888,
+  0px -1px 0 #888,
+  3px 3px 0 #888;
 }
 
 .cutout {
@@ -1316,6 +1418,8 @@ figcaption {
 
 .about-the-game-image-holder {
   flex-direction: column;
+  border-radius: 50px;
+  clip-path: inset(4px);
   align-items: center;
   width: 100%;
   display: flex;
