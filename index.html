@@ -108,19 +108,22 @@
               </div>
             </div>
             <div id="w-node-_321bc860-6d3c-e0fc-fdde-06518ce9e7ea-9712e5d3" class="about-the-game-image-holder _01">
-              <img id="dynamic-image" src="images/bitmap.webp" loading="lazy" alt="" class="about-the-game-image">
+              <img id="dynamic-image-1" src="images/bitmap.webp" loading="lazy" alt="" class="about-the-game-image">
               <div class="white-cover-image _01"></div>
               <div class="white-cover-image _02"></div>
             </div>
-            <div id="w-node-_77c851b2-12b1-379a-9f25-eadeb6ff9854-9712e5d3" class="about-the-game-image-holder _02"><img src="images/black_ninja.webp" loading="lazy" sizes="(max-width: 479px) 27vw, (max-width: 767px) 21vw, (max-width: 991px) 8vw, (max-width: 1439px) 6vw, 109.7421875px" srcset="images/black_ninja-p-500.webp 500w, images/black_ninja.webp 640w" alt="" class="about-the-game-image">
+            <div id="w-node-_77c851b2-12b1-379a-9f25-eadeb6ff9854-9712e5d3" class="about-the-game-image-holder _02">
+              <img id="dynamic-image-2" src="images/black_ninja.webp" loading="lazy" alt="" class="about-the-game-image">
               <div class="white-cover-image _02"></div>
               <div class="white-cover-image _01"></div>
             </div>
-            <div id="w-node-_95852857-5d5a-31f2-e74d-6c0795c82b64-9712e5d3" class="about-the-game-image-holder _03"><img src="images/Anonymous_Guy_Fawkes.webp" loading="lazy" sizes="(max-width: 479px) 133.78125px, (max-width: 767px) 21vw, (max-width: 991px) 8vw, (max-width: 1439px) 6vw, 109.75px" srcset="images/Anonymous_Guy_Fawkes-p-500.webp 500w, images/Anonymous_Guy_Fawkes.webp 640w" alt="" class="about-the-game-image">
+            <div id="w-node-_95852857-5d5a-31f2-e74d-6c0795c82b64-9712e5d3" class="about-the-game-image-holder _03">
+              <img id="dynamic-image-3" src="images/Anonymous_Guy_Fawkes.webp" loading="lazy" alt="" class="about-the-game-image">
               <div class="white-cover-image _02"></div>
               <div class="white-cover-image _01"></div>
             </div>
-            <div id="w-node-_9cd55636-d518-efa7-f871-4bbd14265a61-9712e5d3" class="about-the-game-image-holder _04"><img src="images/Chaos_Completed.webp" loading="lazy" sizes="(max-width: 479px) 27vw, (max-width: 767px) 28vw, (max-width: 991px) 8vw, (max-width: 1439px) 6vw, 109.7421875px" srcset="images/Chaos_Completed-p-500.webp 500w, images/Chaos_Completed-p-800.webp 800w, images/Chaos_Completed.webp 980w" alt="" class="about-the-game-image">
+            <div id="w-node-_9cd55636-d518-efa7-f871-4bbd14265a61-9712e5d3" class="about-the-game-image-holder _04">
+              <img id="dynamic-image-4" src="images/Chaos_Completed.webp" loading="lazy" alt="" class="about-the-game-image">
               <div class="white-cover-image _02"></div>
               <div class="white-cover-image _01"></div>
             </div>
@@ -472,46 +475,76 @@
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const imageElement = document.getElementById('dynamic-image');
-    const waitTimeInSeconds = 5; // Change this value to control the wait time between image loads
+    // Configuration for each dynamic image
+    const imagesConfig = [
+      {
+        id: 'dynamic-image-1',
+        waitTime: 8,    // Time between image updates in seconds
+        delayTime: 0,    // Initial delay before starting the rotation in seconds
+        apiAction: 'getSpecialIds' // API action to fetch 1/1 items
+      },
+      {
+        id: 'dynamic-image-2',
+        waitTime: 8,
+        delayTime: 0.25,
+        apiAction: 'getAllIds' // API action to fetch all items
+      },
+      {
+        id: 'dynamic-image-3',
+        waitTime: 8,
+        delayTime: 0.5,
+        apiAction: 'getAllIds'
+      },
+      {
+        id: 'dynamic-image-4',
+        waitTime: 8,
+        delayTime: 0.75,
+        apiAction: 'getAllIds'
+      }
+    ];
 
-    let ids = [];
-    let currentIndex = -1;
-
-    // Function to fetch all IDs from the API
-    const fetchAllIds = async () => {
+    // Function to fetch IDs based on the API action
+    const fetchIds = async (apiAction) => {
       try {
-        const response = await fetch('https://btc.frl/browse_insurgence/api.php?action=getAllIds');
+        const response = await fetch(`https://btc.frl/browse_insurgence/api.php?action=${apiAction}`);
         const data = await response.json();
         if (data.error) {
-          console.error('Error fetching IDs:', data.error);
+          console.error(`Error fetching IDs (${apiAction}):`, data.error);
+          return [];
         } else {
-          ids = data.ids;
-          console.log('Fetched IDs:', ids);
-          startImageRotation();
+          console.log(`Fetched IDs (${apiAction}):`, data.ids);
+          return data.ids;
         }
       } catch (error) {
-        console.error('Error fetching IDs:', error);
+        console.error(`Error fetching IDs (${apiAction}):`, error);
+        return [];
       }
     };
 
     // Function to select a random ID
-    const getRandomId = () => {
+    let lastId = null; // To prevent immediate repeats
+    const getRandomId = (ids) => {
       if (ids.length === 0) return null;
-      const randomIndex = Math.floor(Math.random() * ids.length);
-      return ids[randomIndex];
+      let randomId;
+      do {
+        const randomIndex = Math.floor(Math.random() * ids.length);
+        randomId = ids[randomIndex];
+      } while (randomId === lastId && ids.length > 1);
+      lastId = randomId;
+      return randomId;
     };
 
     // Function to update the image source with a smooth transition
-    const updateImage = (id) => {
-      if (!imageElement) return;
+    const updateImage = (imageElement, ids) => {
+      const id = getRandomId(ids);
+      if (!id) return;
       const newSrc = `https://btc.frl/browse_insurgence/images_webp0640/${id}.webp`;
 
-      // Create a new Image object to preload the image
+      // Preload the new image
       const preloadedImage = new Image();
       preloadedImage.src = newSrc;
       preloadedImage.onload = () => {
-        // Start transition
+        // Start fade-out transition
         imageElement.classList.add('fade-out');
 
         // After fade-out, change the image and fade-in
@@ -529,20 +562,55 @@
 
       preloadedImage.onerror = () => {
         console.error(`Failed to load image: ${newSrc}`);
+        // Optionally, set a fallback image or display a message
+        imageElement.classList.add('fade-out');
+        setTimeout(() => {
+          imageElement.src = 'images/fallback.webp'; // Ensure this fallback image exists
+          imageElement.classList.remove('fade-out');
+          imageElement.classList.add('fade-in');
+        }, 500);
+        setTimeout(() => {
+          imageElement.classList.remove('fade-in');
+        }, 1000);
       };
     };
 
-    // Function to start the image rotation
-    const startImageRotation = () => {
-      updateImage(getRandomId()); // Initial image load
+    // Function to initiate image rotations for all configured images
+    const startImageRotations = async () => {
+      for (const config of imagesConfig) {
+        const imageElement = document.getElementById(config.id);
+        if (!imageElement) {
+          console.error(`Image element with ID '${config.id}' not found.`);
+          continue;
+        }
 
-      setInterval(() => {
-        updateImage(getRandomId());
-      }, waitTimeInSeconds * 1000);
+        // Fetch IDs for this image based on its API action
+        const ids = await fetchIds(config.apiAction);
+        if (ids.length === 0) {
+          console.error(`No IDs fetched for image '${config.id}'.`);
+          continue;
+        }
+
+        // Function to handle individual image rotation
+        const initiateRotation = () => {
+          // Initial image load
+          updateImage(imageElement, ids);
+
+          // Set interval for subsequent image updates
+          setInterval(() => {
+            updateImage(imageElement, ids);
+          }, config.waitTime * 1000);
+        };
+
+        // Apply initial delay before starting rotation
+        setTimeout(() => {
+          initiateRotation();
+        }, config.delayTime * 1000);
+      }
     };
 
-    // Fetch IDs on page load
-    fetchAllIds();
+    // Start image rotations after the DOM is loaded
+    startImageRotations();
   });
 </script>
 
