@@ -55,10 +55,11 @@
       <div class="navbar-holder">
         <div class="navbar-container">
           <div class="search-container">
-            <button id="me-btn" class="search-button-common search-button1" style="width: 175px;">GET ON MAGICEDEN</button>
-            <button id="explore-btn" class="search-button-common search-button3" style="width: 175px;">EXPLORE COLLECTION</button>
-            <button id="game-btn" class="search-button-common search-button2" style="width: 175px;">PLAY A GAME</button>
-            <button id="search-btn" class="search-button-common search-button4" style="width: 175px;">WALLET CHECKER</button>
+            <button id="join-btn" class="search-button-common search-button1" style="width: 145px;">JOIN DEBAUCHERY</button>
+            <button id="me-btn" class="search-button-common search-button2" style="width: 145px;">GET ON MAGICEDEN</button>
+            <button id="explore-btn" class="search-button-common search-button3" style="width: 145px;">EXPLORE COLLECTION</button>
+            <button id="game-btn" class="search-button-common search-button4" style="width: 145px;">PLAY A GAME</button>
+            <button id="search-btn" class="search-button-common search-button5" style="width: 145px;">WALLET CHECKER</button>
           </div>
           <a href="template/style-guide.html" class="brand w-nav-brand"><img src="images/debauchery-logomark.svg" loading="lazy" alt="" class="nav-logo"></a>
         </div>
@@ -357,6 +358,8 @@
     const exploreBtn = document.getElementById('explore-btn'); // Button that opens search page
     const gameBtn = document.getElementById('game-btn'); // Button that opens a game
     const meBtn = document.getElementById('me-btn'); // Button that opens Magiceden
+    const joinBtn = document.getElementById('join-btn'); // Button that opens Magiceden
+
 
     const closeModal = document.getElementById('close-modal'); // Close button inside modal
     const modalSearchBtn = document.getElementById('modal-search-btn'); // "Check" button inside modal
@@ -416,6 +419,12 @@
     if (meBtn) {
       meBtn.addEventListener('click', () => {
         const url = 'https://magiceden.us/ordinals/marketplace/insurgence_debauchery'; // Replace with the external URL you want to open
+        window.open(url, '_blank'); // Opens the URL in a new window or tab
+      });
+    }
+    if (joinBtn) {
+      joinBtn.addEventListener('click', () => {
+        const url = 'https://discord.gg/mfersdieveryday'; // Replace with the external URL you want to open
         window.open(url, '_blank'); // Opens the URL in a new window or tab
       });
     }
@@ -480,25 +489,25 @@
       {
         id: 'dynamic-image-1',
         waitTime: 8,    // Time between image updates in seconds
-        delayTime: 0,    // Initial delay before starting the rotation in seconds
+        delayTime: 0.4,    // Initial delay before starting the rotation in seconds
         apiAction: 'getSpecialIds' // API action to fetch 1/1 items
       },
       {
         id: 'dynamic-image-2',
         waitTime: 8,
-        delayTime: 0.25,
+        delayTime: 0.8,
         apiAction: 'getAllIds' // API action to fetch all items
       },
       {
         id: 'dynamic-image-3',
         waitTime: 8,
-        delayTime: 0.5,
+        delayTime: 1.2,
         apiAction: 'getAllIds'
       },
       {
         id: 'dynamic-image-4',
         waitTime: 8,
-        delayTime: 0.75,
+        delayTime: 1.6,
         apiAction: 'getAllIds'
       }
     ];
