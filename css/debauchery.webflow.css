@@ -1460,7 +1460,6 @@ figcaption {
 .about-the-game-image-holder {
   flex-direction: column;
   border-radius: 50px;
-  clip-path: inset(0px);
   align-items: center;
   width: 100%;
   display: flex;
@@ -1878,7 +1877,7 @@ figcaption {
 .white-cover-image._02 {
   background-color: var(--bitcoin);
   height: 0%;
-  inset: 0% 0% auto;
+  inset: 1% 0% auto;
   overflow: hidden;
 }
 
@@ -2160,9 +2159,19 @@ figcaption {
     padding-left: 16px;
   }
 
+  .about-the-game-image-holder._02 {
+    max-width: 520px;
+    margin-top: -60px;
+  }
+
+  .about-the-game-image-holder._03 {
+    max-width: 520px;
+    margin-top: -60px;
+  }
+
   .about-the-game-image-holder._04 {
     max-width: 520px;
-    margin-top: 40px;
+    margin-top: -20px;
   }
 
   .maps-heading-holder {
@@ -2889,6 +2898,7 @@ figcaption {
 
 #w-node-_321bc860-6d3c-e0fc-fdde-06518ce9e7ea-9712e5d3 {
   grid-area: 1 / 5 / 4 / 9;
+  transform: translateY(-6px); /* Move up by 5px */
 }
 
 #w-node-_77c851b2-12b1-379a-9f25-eadeb6ff9854-9712e5d3 {
